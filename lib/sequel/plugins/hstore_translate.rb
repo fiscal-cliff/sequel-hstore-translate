@@ -1,11 +1,10 @@
-require "sequel/plugins/hstore_translate/version"
-require "sequel/model"
+require 'sequel/plugins/hstore_translate/version'
+require 'sequel/model'
 
 module Sequel
   module Plugins
     module HstoreTranslate
-
-      SUFFIX = '_translations'
+      SUFFIX = '_translations'.freeze
 
       def self.apply(model, opts = [])
         model.instance_eval do
