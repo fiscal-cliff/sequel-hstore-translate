@@ -8,7 +8,7 @@ module Sequel
 
       def self.apply(model, opts = [])
         model.instance_eval do
-          @translated_attrs = Array[opts]
+          @translated_attrs = Array[opts].flatten
         end
       end
 
