@@ -36,10 +36,10 @@ module Sequel
             model.class_eval do
               I18n.available_locales.each do |locale|
                 define_method("#{attr}_#{locale}") do
-                  send("#{attr}#{SUFFIX}").with_indifferent_access[locale.to_s]
+                  (send("#{attr}#{SUFFIX}") || {}).with_indifferent_access[locale.to_s]
                 end
                 define_method("#{attr}_#{locale}=") do |arg|
-                  val = send("#{attr}#{SUFFIX}")
+                  val = (send("#{attr}#{SUFFIX}") || {})
                         .with_indifferent_access
                         .merge(locale.to_s => arg)
                   send("#{attr}#{SUFFIX}=", val)
