@@ -8,14 +8,15 @@ Gem::Specification.new do |spec|
   spec.version       = Sequel::Plugins::HstoreTranslate::VERSION
   spec.authors       = ['Fiscal Cliff']
   spec.email         = ['strong.drug@gmail.com']
+  spec.license       = 'MIT'
 
   spec.summary       = 'Sequel version of Hstore Translate gem'
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/fiscal-cliff/sequel-hstore-translate"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = 'https://RubyGems.org'
+    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   else
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
@@ -26,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'pry'
-  spec.add_runtime_dependency 'sequel', '>= 4.0.0'
+  spec.add_development_dependency 'pry', '~> 0'
+  spec.add_runtime_dependency 'sequel', '~> 4.3'
 end
